@@ -3,27 +3,37 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Reaction Gif Generator</title>
+    <title>Fictional Character Gif Generator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="Assets/style.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="Assets/reset.css" />
-    <script src="Assets/main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="Assets/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="Assets/main.js"></script>
 </head>
 <body>
     <!-- Container for buttons -->
-    <div id="reaction" class="container p-2"> 
-        <button class="btn btn-info">Happy</button>
-        <button class="btn btn-info">Sad</button>
+    <div id="fiction" class="container p-2"> 
+        <!-- <button class="btn btn-info">Superman</button>
+        <button class="btn btn-info">Spider-Man</button> -->
     </div>
 
     <!-- Container for populated Gifs -->
-    <div id="gifs" class="col-10 mt-3 p-2">
-            <button class="btn btn-info">Happy</button>
+    <div class="row p-2 mt-1 mr-2 ml-2">
+        <div id="gifs" class="col-9 mt-3 p-2"> </div>
 
+        <!-- Search area -->
+        <div class="col-3 mt-3 p-1">
+            <div class="row mt-1 mb-1 p-1"></div>
+                <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Add a character: </label>
+                      <input class="form-control" id="srch-field" placeholder="Search"><br>
+                    <button id="submit" type="submit" class="btn btn-info">Submit</button>
+                </div>
+                </form>
+        </div>
     </div>
-
     <!-- Search Bar -->
 </body>
 </html>
