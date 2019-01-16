@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Fictional Character Gif Generator</title>
+    <title>Gif Heroes!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="Assets/reset.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="Assets/style.css" />
@@ -11,29 +11,31 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script src="Assets/main.js"></script>
 </head>
-<body>
+<body style="background-color: gray;">
     <!-- Container for buttons -->
-    <div id="fiction" class="container p-2"> 
-        <!-- <button class="btn btn-info">Superman</button>
-        <button class="btn btn-info">Spider-Man</button> -->
-    </div>
+    <div id="fiction" class="container-fluid p-2"> </div>
 
     <!-- Container for populated Gifs -->
-    <div class="row p-2 mt-1 mr-2 ml-2">
-        <div id="gifs" class="col-9 mt-3 p-2"> </div>
+<div class="container-fluid p-2">
+    <div class="row p-2 mt-1">
+        <div id="gifs" class="col-8 mt-3 p-1"> 
+            <p>Rating: G</p>
+            <img src="https://giphy.com/gifs/spider-man-electro-spidey-hSZASROggzU0U">
+        </div>
 
         <!-- Search area -->
-        <div class="col-3 mt-3 p-1">
+        <div class="col-4 mt-3 p-4">
             <div class="row mt-1 mb-1 p-1"></div>
                 <form>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Add a character: </label>
-                      <input class="form-control" id="srch-field" placeholder="Search"><br>
-                    <button id="submit" type="submit" class="btn btn-info">Submit</button>
-                </div>
+                      <label for="srch-field" style="font-size: 40px">Add a Superhero: </label>
+                      <input class="form-control" id="srch-field"><br>
+                    </div>
+                    <button id="btn-mkr" class="btn btn-info" type="submit">Add</button>
                 </form>
         </div>
     </div>
+</div>
     <!-- Search Bar -->
 </body>
 </html>
