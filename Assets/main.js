@@ -1,29 +1,38 @@
 $(document).ready(function() {
 
 // create an array for the searched items. Extra items will be added to this Array
-var topics = ["Superman", "Spider-Man", "Batman"];
+var topics = ["Superman", "Spider-Man", "Batman", "Hulk", "Thor", "Wonder Woman", "Captain Planet"];
 
 function displayGifInfo() {
 
     
     var character = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character +  "&limit=1&offset=0&rating=PG-13&lang=en&api_key=tLC4vRAdAP5U3nGNQwHWGOhTWPo1mxDH&";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character +  "&limit=10&offset=20&rating=pg-13&lang=en&api_key=tLC4vRAdAP5U3nGNQwHWGOhTWPo1mxDH&";
 
     // Creating an AJAX call for the specific movie button being clicked
     $.ajax({
       url: queryURL,
       method: "GET"
     }).then(function(response) {
+
+        // display the object in the console to pull information 
         console.log(response.data);
-        var gifDiv = $("<div class='gif>");
+
+        // create a loop to go through the 10 objects that the API pulls 
+        for (var i = 0; i < response.data.length; i++){
+
         // store variable for rating called from the API
-        var rated = response.data["0"].rating;
+        var rated = response.data[i].rating;
+
+        // places the rating in a paragraph tag in the #gif div
         $("#gifs").append("Rating: " + rated); 
 
-        var gifURL = response.data["0"].embed_url; 
-        console.log(response.data["0"].url)
-        var gif = $("<img>").attr("src", gifURL);
+        var gifURL = response.data[i].images.original.url; 
+        
+        var gif = $("<img class='img-thumbnail mb-2' style='height: 300px; width: 300px'>").attr("src", gifURL);
         $("#gifs").append(gif);
+        }
+        
         
     });
 }
